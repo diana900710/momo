@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ccc;
+        }
+        header .head {
+            width: 1270px;
+            margin: auto;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .head ul {
+            display: flex;
+        }
+        ul li {
+            list-style: none;
+            padding: 0 5px;
+        }
+        .head-left li:first-child {
+            padding: 0 10px;
+        }
+        .head li+li {
+            border-left: 1px solid #000;
+        }
+        .head-left li:nth-child(2) {
+            border-left: unset;
+        }
+        li button {
+            border: 1px solid #999;
+            padding: 3px 10px;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+        li a {
+            text-decoration: none;
+            color: #000;
+        }
+        head li a:hover {
+            color: #f0a;
+        }
+        .head-right button a:hover {
+            color: #fff;
+        }
+        .head-right button:hover {
+            background-color: #f0a;
+        }
+        main .first {
+            width: 1270px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .first img {
+            height: 140px;
+        }
+        .first .search {
+            width: 520px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: end;
+        }
+        .search .searchbar {
+            width: 420px;
+            height: 30px;
+            border: 2px solid #515151;
+            padding: 0 5px;
+            display: flex;
+            align-content: center;
+            border-radius: 50px;
+        }
+        .searchbar * {
+            flex-shrink: 0;
+        }
+        .searchbar input {
+            border: unset;
+            margin-left: 12px;
+            width: 318px;
+            padding: 0 2px;
+        }
+        .searchbar button {
+            background-color: #515151;
+            border: unset;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        .searchbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            padding: 5px 28px;
+        }
+        .search .popular {
+            padding: 15px 0;
+            display: flex;
+            color: #f0a;
+        }
+        .popular p {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .popular ul {
+            display: flex;
+        }
+        .popular a {
+            color: #f0a;
+        }
+        .popular a:hover {
+            color: blue;
+        }
+        .popular li+li {
+            border-left: 1px solid #f0a;
+        }
+        .activity {
+            width: 350px;
+            height: 80px;
+            background-color: antiquewhite;
+            margin-top: 20px;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .activity ul {
+            display: flex;
+            justify-content: space-around;
+            width: 340px;
+            height: 70px;
+            margin: 5px;
+            border: 1px solid #fa0;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .activity li {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .activity div {
+            background-color: #f06923;
+            height: 100px;
+            border-top-right-radius: 50px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .activity img {
+            height: 60px;
+        }
+        .activity div a {
+            margin: 5px;
+            height: 85px;
+            border: 1px solid #fff;
+            border-top-right-radius: 50px;
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+            display: flex;
+            align-content: center;
+            flex-wrap: wrap;
+        }
+        .activity a {
+            padding-top: 5px;
+        }
+        .first-bottom {
+            width: 1270px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .first-bottom div img {
+            height: 41.4px;
+            vertical-align: top;
+        }
+        .first-bottom ul {
+            display: flex;
+            height: 41.4px;
+            flex-wrap: wrap;
+            align-content: end;
+        }
+        .first-bottom li {
+            padding: 0;
+            height: 35px;
+        }
+        .first-bottom ul img {
+            height: 100%;
+        }
+        .content-back {
+            height: 370px;
+            background-color: #fda8c7;
+        }
+        .content {
+            width: 1270px;
+            height: 370px;
+            margin: auto;
+            display: flex;
+        }
+        .content img {
+            height: 100%;
+        }
+        .content .list {
+            width: 230px;
+            height: 510px;
+            font-size: 15px;
+            background-color: #515151;
+            display: flex;
+            align-items: end;
+        }
+        .list ul {
+            width: 202px;
+            margin: 15px 10px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .content .border {
+            border-top: 1px solid #9995;
+        }
+        .content a {
+            color: #fff;
+        }
+        .content div {
+            flex-grow: 1;
+        }
+        .content .content-right {
+            width: 200px;
+            height: 340px;
+            margin: 13px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            padding-bottom: 5px;
+        }
+        .content-right div {
+            display: flex;
+            justify-content: space-around;
+            background-color: #9994;
+            flex-wrap: wrap;
+            align-items: center;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+            padding: 5px 0;
+        }
+        .content-right ul {
+            width: 66px;
+            display: flex;
+            padding: 6px 0 6px 25px;
+            gap: 5px;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .content-right li {
+            width: 18px;
+            height: 18px;
+            background-color: #ccc;
+            padding: 0;
+            text-align: center;
+        }
+        .content-right nav ul {
+            width: 100%;
+            height: 290px;
+            padding: 0;
+            display: flex;
+            gap: 0;
+        }
+        .content-right nav li {
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100px;
+            background-color: unset;
+        }
+        .content-right nav a {
+            display: flex;
+            width: 100%;
+        }
+        .content-right img {
+            width: 100%;
+        }
+        .content2 {
+            width: 1270px;
+            height: 150px;
+            margin: auto;
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .content2 .conimg {
+            width: 1030px;
+            display: flex;
+            margin: 10px 0 10px 10px;
+            gap: 10px;
+        }
+        .content2 .conimg1 {
+            height: 130px;
+        }
+        .conimg img {
+            height: 100%;
+        }
+        .content2 .conimg2 {
+            background-color: #ccc;
+            width: 261.25px;
+            height: 100%;
+        }
+        .conimg2 .conimg-title {
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            background-color: #999;
+            color: #fff;
+            padding: 0 5px;
+        }
+        .conimg-title p {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .conimg-title ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            gap: 3px;
+        }
+        .conimg-title li {
+            color: #f0a;
+            background-color: #fff;
+        }
+        .conimg-title li:last-child {
+            background-color: #fff7;
+        }
+        .conimg2 .conimg-content {
+            padding: 10px;
+            height: 78px;
+        }
+        .conimg-content a {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            text-decoration: none;
+        }
+        .conimg-content div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+            padding-left: 5px;
+            color: #000;
+        }
+        .conimg-content h4 {
+            font-size: 15px;
+        }
+        .conimg-content img {
+            height: 85%;
+            margin: auto;
+        }
+        .conimg-content p:first-child {
+            padding: 0 2px;
+            border: 1px solid #f0a;
+            width: 70px;
+            color: #f0a;
+            font-size: 15px;
+            text-align: center;
+        }
+        .conimg-content p:nth-child(2) {
+            font-size: 13px;
+        }
+        .conimg-content p:nth-child(3) {
+            font-size: 20px;
+            color: #f0a;
+        }
+        .queen {
+            width: 1270px;
+            height: 411px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+        .queen img {
+            vertical-align: top;
+        }
+        .queen .queen-right {
+            width: 449px;
+        }
+        .img-top {
+            height: 210px;
+        }
+        .queen-w {
+            width: 242px;
+        }
+        .queen-center {
+            height: 100%;
+            width: 332px;
+        }
+        .queen-center img {
+            width: 100%;
+        }
+        .queen-center img:first-child {
+            height: 88.5px;
+        }
+        .queen-left {
+            display: flex;
+        }
+        .queen-left img {
+            width: 100%;
+        }
+        .queen-flex-grow {
+            width: 207px;
+        }
+        .queen-right div {
+            display: flex;
+        }
+        .line {
+            width: 1270px;
+            height: 74px;
+            margin: auto;
+            display: flex;
+        }
+        .line img {
+            height: 100%;
+        }
+        .queen-card {
+            width: 1270px;
+            height: 250px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+        }
+        .queen-card img {
+            height: 50%;
+        }
+        .limited-time {
+            width: 1270px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .limite-left {
+            width: 550px;
+            height: 610px;
+            background-color: #ccc7;
+            border-radius: 20px;
+        }
+        .limite-left .limite-left-title {
+            height: 30px;
+            background-color: #fd0;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            padding: 15px;
+        }
+        .limite-left * {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .limite-left-title div,
+        .limite-left-title nav {
+            padding-left: 10px;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .limite-left-title p {
+            padding: 0 5px;
+            margin: 0 5px;
+            background-color: #000;
+            color: #fff;
+            font-weight: normal;
+            border-radius: 5px;
+        }
+        .limite-left-title ul {
+            gap: 5px;
+        }
+        .limite-left-title li {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 5px;
+        }
+        .limite-left-title a {
+            color: #f06923;
+        }
+        .limite-left-content {
+            padding: 20px 35px;
+            row-gap: 8px;
+            column-gap: 30px;
+        }
+        .limite-left-content div {
+            width: 140px;
+            height: 256px;
+            align-content: normal;
+        }
+        .limite-left-content img {
+            width: 100%;
+        }
+        .limite-left-content p {
+            display: unset;
+        }
+        .limite-left-content .limite-tag {
+            position: absolute;
+            color: #fff;
+            padding: 10px 15px;
+            margin-top: 120px;
+            margin-left: 10px;
+            background: url(https://image.momoshop.com.tw//ecm/img/cmm/icon_prdtag02.png)no-repeat left center/100% auto;
+        }
+        .limite-left-content p:nth-child(3) {
+            padding-top: 20px;
+            width: 100%;
+            height: 42px;
+            overflow: hidden;
+        }
+        .limite-left-content div div {
+            height: 20px;
+            justify-content: center;
+            gap: 10px;
+            color: #f0a;
+        }
+        .limite-left-content div div p:nth-child(1) {
+            font-size: 18px;
+            border: 1px solid #f0a;
+            padding: 0 5px;
+        }
+        .limite-left-content div div p:nth-child(2) {
+            font-size: 24px;
+        }
+        .limite-left-content p:nth-child(5) {
+            width: 100%;
+            text-align: center;
+            padding-top: 10px;
+            text-decoration: line-through;
+            color: #999;
+        }
+        .limite-right {
+            width: 650px;
+            height: 570px;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+        }
+        .limite-right .limite-right-top {
+            width: 100%;
+            height: 390px;
+            background-color: #f0a2;
+            border-radius: 20px;
+        }
+        .limite-right-top .limite-rt-title {
+            height: 30px;
+            padding: 15px;
+            background-color: #f0a;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            display: flex;
+        }
+        .limite-rt-title * {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+        }
+        .limite-rt-title div {
+            padding-left: 50px;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        .limite-rt-title p {
+            background-color: #000;
+            color: #fff;
+            padding: 0 5px;
+            margin: 0 5px;
+            font-weight: normal;
+            border-radius: 5px;
+        }
+        .limite-rt-content {
+            display: flex;
+            height: 330px;
+            margin: auto;
+        }
+        .limite-rt-content p {
+            width: 35px;
+            height: 60px;
+            font-size: 34px;
+            margin: auto;
+            color: #999;
+        }
+        .limite-rt-content div {
+            width: 650px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            column-gap: 10px;
+            row-gap: 10px;
+        }
+        .limite-rt-content img {
+            width: 285px;
+            height: 140px;
+            vertical-align: top;
+        }
+        .limite-right .limite-right-bottom {
+            width: 100%;
+            height: 200px;
+            background-color: #ccc7;
+            border-radius: 20px;
+        }
+        .limite-right-bottom h2 {
+            padding: 15px;
+            color: #f0a;
+        }
+        .limite-right-bottom * {
+            display: flex;
+            flex-shrink: 0;
+        }
+        .limite-right-bottom div {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .limite-right-bottom span {
+            margin: auto 0;
+            width: 30px;
+            font-size: 34px;
+            color: #999;
+        }
+        .limite-right-bottom a {
+            display: unset;
+            width: 108px;
+            height: 108px;
+        }
+        .limite-right-bottom img {
+            height: 108px;
+        }
+        .limite-right-bottom .font-tag {
+            position: absolute;
+            width: 108px;
+            box-sizing: border-box;
+            margin-top: -25px;
+            margin-left: 0;
+            padding: 5px;
+            background-color: #0009;
+            color: #fff;
+            justify-content: center;
+        }
+        .maybelike {
+            width: 1270px;
+            height: 425px;
+            margin: 20px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .maybelike .may-left {
+            width: 480px;
+            height: 100%;
+            background-image: url(https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_272_01/bt_0_272_01_e1.png?t=1669701873827);
+            background-size: 100%;
+            border-radius: 20px;
+        }
+        .may-left div img:first-child {
+            margin-top: 40px;
+            height: 40px;
+        }
+        .may-left nav {
+            width: 100%;
+            padding: 40px 0;
+            height: 275px;
+            display: flex;
+            overflow: hidden;
+        }
+        .may-left .may-prev {
+            background-image: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_prev.png);
+            width: 35px;
+            height: 60px;
+            margin: 90px 0;
+            position: absolute;
+        }
+        .may-left .may-next {
+            background-image: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_next.png);
+            width: 35px;
+            height: 60px;
+            margin: 90px 0 0 445px;
+            position: absolute;
+        }
+        .may-left ul {
+            display: flex;
+        }
+        .may-left li {
+            width: 160px;
+            height: 270px;
+            padding: 0 10px;
+            background-color: #fff;
+            margin: 0 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 4px 4px 10px 4px rgb(0 0 0 / 40%);
+        }
+        .may-left li img {
+            width: 100%;
+        }
+        .may-left li p {
+            height: 40px;
+            overflow: hidden;
+        }
+        .may-left li div {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            height: 65px;
+            gap: 10px;
+        }
+        .may-left div p:first-child {
+            color: #999;
+            font-size: 18px;
+            margin-top: 10px;
+            text-decoration: line-through;
+        }
+        .may-left div p:nth-child(2) {
+            color: #f0a;
+            font-size: 24px;
+            margin-top: 5px;
+        }
+        .maybelike .may-right {
+            width: 725px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .may-right-top {
+            height: 250px;
+            background-color: #ccc7;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .may-right-top img {
+            height: 60px;
+        }
+        .may-right-top nav {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            height: 180px;
+            padding: 0 15px 15px 15px;
+        }
+        .may-right-top ul{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            width: 695px;
+            gap: 10px;
+        }
+        .may-right-top li{
+            width: 120px;
+            height: 170px;
+            background-color: #fff;
+            border-radius: 6px;
+        }
+        .may-right-top li img{
+            height: 110px;
+        }
+        .may-right-top li p:nth-child(2){
+            height: 20px;
+            overflow: hidden;
+        }
+        .may-right-top li div{
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+            height: 30px;
+            gap: 5px;
+        }
+        .may-right-top ul p:nth-child(1){
+            color: #999;
+            text-decoration: line-through;
+            padding-top: 4px;
+        }
+        .may-right-top ul div p:nth-child(2){
+            color: #f0a;
+            font-size: 22px;
+        }
+        .may-right .may-prev {
+            background-image: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_prev.png);
+            width: 35px;
+            height: 60px;
+            padding: 0;
+            position: absolute;
+        }
+        .may-right-top .may-prev{
+            margin: 50px 700px 0 0;
+        }
+        .may-right-bottom .may-prev{
+            margin: 55px 660px 0 0;
+        }
+        .may-right .may-next {
+            background-image: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_next.png);
+            width: 35px;
+            height: 60px;
+            padding: 0;
+            position: absolute;
+        }
+        .may-right-top .may-next{
+            margin: 50px 0 0 700px;
+        }
+        .may-right-bottom .may-next{
+            margin: 55px 0 0 660px;
+        }
+        .may-right-bottom {
+            height: 165px;
+            background-color: #ffd4e4;
+            border-radius: 20px;
+            display: flex;
+            overflow: hidden;
+        }
+        .may-right-bottom nav{
+            width: 680px;
+            height: 160px;
+            padding-bottom: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: end;
+            justify-content: center;
+        }
+        .may-right-bottom ul{
+            display: flex;
+            gap: 10px;
+        }
+        .may-right-bottom li{
+            padding: 0;
+            width: 84px;
+            height: 146px;
+        }
+        .may-right-bottom i{
+            position: absolute;
+            color: #fff;
+            margin-left: 65px;
+            padding: 6px;
+            font-weight: 800;
+            background: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_flag02.png)no-repeat center/auto 100%;
+        }
+        .may-right-bottom .may-rb-top{
+            background: url(https://image.momoshop.com.tw/ecm/img/cmm/icon_flag01.png)no-repeat center/auto 100%;
+        }
+        .may-right-bottom img{
+            width: 100%;
+        }
+        .may-right-bottom p:nth-child(3){
+            background-color: #999;
+            color: #fff;
+            width: 60px;
+            padding: 0 5px;
+            border-radius: 10px;
+            position: absolute;
+            margin: -15px 0 0 7px;
+        }
+        .may-right-bottom p:nth-child(4){
+            color: #f0a;
+            font-size: 24px;
+            padding-top: 10px;
+            text-align: center;
+        }
+        .may-right-bottom p:nth-child(5){
+            color: #999;
+            text-decoration: line-through;
+            text-align: center;
+        }
+        .ad{
+            width: 1270px;
+            height: 90px;
+            margin: auto;
+        }
+        .ad img{
+            width: 100%;
+        }
+        .momocard{
+            width: 1270px;
+            height: 100px;
+            margin: 10px auto;
+            background-color: #f7e1e9;
+            display: flex;
+            border-radius: 20px;
+        }
+        .momocard nav{
+            width: 980px;
+            height: 72px;
+            padding: 14px 35px;
+        }
+        .momocard ul{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .momocard li{
+            background-color: #fff;
+            padding: 5px 20px;
+            border-radius: 20px;
+        }
+        .rank{
+            width: 1270px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="head">
+            <nav class="head-left">
+                <ul>
+                    <li><a href="#">回首頁</a></li>
+                    <li><a href="#">momo富立保險</a></li>
+                    <li><a href="#">APP下載</a></li>
+                    <li><a href="#">點點賺</a></li>
+                    <li><a href="#">直配大陸</a></li>
+                    <li><a href="#">書店</a></li>
+                </ul>
+            </nav>
+            <nav class="head-right">
+                <ul>
+                    <li><a href="#">登入</a></li>
+                    <li><a href="#">註冊</a></li>
+                    <li><a href="#">會員中心</a></li>
+                    <li><a href="#">查訂單</a></li>
+                    <li><a href="#">追蹤清單</a></li>
+                    <li><a href="#">折價券</a></li>
+                    <li><a href="#">購物車( 0 )</a></li>
+                    <li><button><a href="#">結帳</a></button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="first">
+            <a href="#"><img
+                    src="https://img3.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_243_01/bt_0_243_01_e2.gif?t=1677072052639"
+                    title="momo"></a>
+            <div class="search">
+                <div class="searchbar">
+                    <input type="text" placeholder="NIKE">
+                    <button><a href="#">搜尋</a></button>
+                </div>
+                <div class="popular">
+                    <p>熱門 ＞</p>
+                    <nav>
+                        <ul>
+                            <li><a href="#">行李箱</a></li>
+                            <li><a href="#">衛生紙</a></li>
+                            <li><a href="#">麥當勞</a></li>
+                            <li><a href="#">除濕機</a></li>
+                            <li><a href="#">口罩</a></li>
+                            <li><a href="#">無印良品</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="activity">
+                <ul>
+                    <li><a href="#"><img
+                                src="https://img4.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_245_01/bt_0_245_01_P1_1_e2.png?t=1677600013828"></a>
+                    </li>
+                    <li>
+                        <div><a href="#"><img
+                                    src="https://img4.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_245_01/bt_0_245_01_P1_2_e2.png?t=1677600013828"></a>
+                        </div>
+                    </li>
+                    <li><a href="#"><img
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_245_01/bt_0_245_01_P1_3_e2.png?t=1677945605468"></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="first-bottom">
+                <div><img src="https://www.momoshop.com.tw/ecm/img/cmm/menutitle.png?t=20190730001"></div>
+                <ul>
+                    <li><a href="#"><img title="樂公益"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_2_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="保險館"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_9_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="超市快配"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_1_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="省錢達人"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_3_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="看看買"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_4_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="週期訂購"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_6_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="品牌旗艦"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_7_e2.png?t=1677600014568"></a>
+                    </li>
+                    <li><a href="#"><img title="綠色生活"
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/998/00/000/bt_0_246_01/bt_0_246_01_P1_10_e2.png?t=1677600014568"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content-back">
+            <div class="content">
+                <nav class="list">
+                    <ul>
+                        <li><a href="#">家電・ 電玩・ 視聽・ 廚三機</a></li>
+                        <li><a href="#">手機・ 平板・ 耳機・ 攝相機</a></li>
+                        <li><a href="#">電腦・ 電競・ 週邊・ 零組件</a></li>
+                        <li class="border"></li>
+                        <li><a href="#">保健・ 醫療用品・ 保險套</a></li>
+                        <li><a href="#">食品・ 零食・ 飲料・ 生鮮</a></li>
+                        <li class="border"></li>
+                        <li><a href="#">彩妝・ 保養・ 洗沐・ 香氛</a></li>
+                        <li><a href="#">服裝・ 內衣褲・ 襪子・ 機能</a></li>
+                        <li><a href="#">珠寶・ 精品・ 配飾・ 鞋包箱</a></li>
+                        <li class="border"></li>
+                        <li><a href="#">日用品・ 清潔・ 餐廚・ 寵物</a></li>
+                        <li><a href="#">母嬰・ 童裝・ 尿布・ 玩具 </a></li>
+                        <li class="border"></li>
+                        <li><a href="#">家具・ 寢具・ 傢飾・ 修繕</a></li>
+                        <li><a href="#">運動・ 按摩・ 戶外・ 車類</a></li>
+                        <li class="border"></li>
+                        <li><a href="#">圖書・ 文具・ 影音・ 樂器</a></li>
+                        <li><a href="#">旅遊・ 票券・ 加值・ 軟體</a></li>
+                    </ul>
+                </nav>
+                <img
+                    src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_247_01/bt_0_247_01_P1_5_e2.jpg?t=1678168806264">
+                <div>
+                    <div class="content-right">
+                        <div>
+                            <p>今日秒殺</p>
+                            <ul>
+                                <li>1</li>
+                                <li>2</li>
+                                <li>3</li>
+                            </ul>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="#"><img
+                                            src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_248_01/bt_0_248_01_P1_4_e2.jpg?t=1678177340481"></a>
+                                </li>
+                                <li><a href="#"><img
+                                            src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_248_01/bt_0_248_01_P1_1_e2.jpg?t=1678118445853"></a>
+                                </li>
+                                <li><a href="#"><img
+                                            src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_248_01/bt_0_248_01_P1_3_e2.jpg?t=1678159415857"></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content2">
+            <div class="conimg">
+                <div class="conimg1">
+                    <a href="#"><img
+                            src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_249_01/bt_0_249_01_e2.jpg?t=1678094721320"></a>
+                </div>
+                <div class="conimg2">
+                    <div class="conimg-title">
+                        <p>影音購物</p>
+                    </div>
+                    <div class="conimg-content">
+                        <a href="#">
+                            <img
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_250_01/bt_0_250_01_e8.jpg?t=1668478868608">
+                            <div>
+                                <h4>【momo富邦卡】</h4>
+                                <p>千大品牌最高10%無上限</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="conimg2">
+                    <div class="conimg-title">
+                        <p>電視購物</p>
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                        </ul>
+                    </div>
+                    <div class="conimg-content">
+                        <a href="#">
+                            <img src="https://img1.momoshop.com.tw/goodsimg/0010/085/700/10085700_L.jpg?t=1678105839">
+                            <div>
+                                <p>01台LIVE</p>
+                                <p>義大利FraisMonde SOS瑕疵神隱抗皺活萃</p>
+                                <p>$2,570</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="queen">
+            <div class="queen-left">
+                <div class="queen-w">
+                    <img class="img-top"
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_01.jpg?t=1678163169977">
+                    <img
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_03.jpg?t=1678163169991">
+                </div>
+                <div class="queen-flex-grow">
+                    <img class="img-top"
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_02.gif?t=1678163170255">
+                    <img
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_04.jpg?t=1678163170001">
+                </div>
+            </div>
+            <div class="queen-center">
+                <img
+                    src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_05-1.jpg?t=1678163170011">
+                <img
+                    src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_05-2.jpg?t=1678163170024">
+                <img
+                    src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_05-3.jpg?t=1678163170032">
+            </div>
+            <div class="queen-right">
+                <div class="img-top">
+                    <img
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_06.jpg?t=1678163170041">
+                    <img
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_07.jpg?t=1678163170051">
+                    <img
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_08.jpg?t=1678163170062">
+                </div>
+                <div class="queen-right-down">
+                    <img class="queen-flex-grow"
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_09.jpg?t=1678163170071">
+                    <img class="queen-w"
+                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_10.jpg?t=1678163170082">
+                </div>
+            </div>
+        </div>
+        <div class="line">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_11-1.jpg?t=1678163170090">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_11-2.jpg?t=1678163170099">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_11-3.jpg?t=1678163170108">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_11-1.jpg?t=1678163170090">
+        </div>
+        <div class="queen-card">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_12.jpg?t=1678163170125">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_13.jpg?t=1678163170133">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_14.jpg?t=1678163170143">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_15.jpg?t=1678163170152">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_16.jpg?t=1678163170161">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_17.jpg?t=1678163170169">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_18.jpg?t=1678163170194">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_19.jpg?t=1678163170203">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_20.jpg?t=1678163170212">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_21.jpg?t=1678163170222">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_22.jpg?t=1678163170231">
+            <img
+                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_02/Area_23.jpg?t=1678163170239">
+        </div>
+        <div class="limited-time">
+            <div class="limite-left">
+                <div class="limite-left-title">
+                    <h2>限時搶購</h2>
+                    <div>
+                        <div>倒數<p>00</p>:<p>34</p>:<p>32</p>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#">16:00場</a></li>
+                            <li><a href="#">21:00場</a></li>
+                            <li><a href="#">看全部 ></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="limite-left-content">
+                    <div>
+                        <img
+                            src="https://img3.momoshop.com.tw/ecm/img/online/app/limitbuy/20230306/AT0120230306329101.jpg?t=20230306193917"><!--140*140-->
+                        <p class="limite-tag">最後180組</p><!--標籤-->
+                        <p>【桂格】無糖養氣人蔘禮盒x4盒(共76入)60ml/盒</p>
+                        <div>
+                            <p>75折</p>
+                            <p>$3,643</p>
+                        </div>
+                        <p>$4,796</p><!--原價-->
+                    </div>
+                    <div>
+                        <img
+                            src="https://img3.momoshop.com.tw/goodsimg/0010/512/676/10512676_O.jpg?t=1678187436"><!--140*140-->
+                        <p class="limite-tag">最後510組</p><!--標籤-->
+                        <p>【湛盧咖啡】經典綜合精品濾掛咖啡70包(共2盒)</p>
+                        <div>
+                            <p>35折</p>
+                            <p>$1,188</p>
+                        </div>
+                        <p>$3,360</p><!--原價-->
+                    </div>
+                    <div>
+                        <img
+                            src="https://img3.momoshop.com.tw/goodsimg/0011/064/219/11064219_O.jpg?t=1678241777"><!--140*140-->
+                        <p class="limite-tag">最後185組</p><!--標籤-->
+                        <p>【煙波-宜蘭傳藝】每年僅此一檔★-8大送1位孩童★免費入住經典上下舖家庭房含早餐</p>
+                        <div>
+                            <p>27折</p>
+                            <p>$3,299</p>
+                        </div>
+                        <p>$12,000</p><!--原價-->
+                    </div>
+                    <div>
+                        <img
+                            src="https://img2.momoshop.com.tw/ecm/img/online/app/limitbuy/20230306/AT0120230306329118.jpg?t=20230308140602"><!--140*140-->
+                        <p class="limite-tag">最後175組</p><!--標籤-->
+                        <p>【Simply 新普利】超濃代謝夜酵素錠EX 5盒(30顆/盒)</p>
+                        <div>
+                            <p>46折</p>
+                            <p>$3,440</p>
+                        </div>
+                        <p>$7,400</p><!--原價-->
+                    </div>
+                    <div>
+                        <img
+                            src="https://img2.momoshop.com.tw/goodsimg/0009/277/137/9277137_O.jpg?t=1678179672"><!--140*140-->
+                        <p class="limite-tag">最後610組</p><!--標籤-->
+                        <p>【雀巢】100%紐西蘭全脂奶粉 2.1kg x2罐</p>
+                        <div>
+                            <p>63折</p>
+                            <p>$999</p>
+                        </div>
+                        <p>$1,580</p><!--原價-->
+                    </div>
+                    <div>
+                        <img
+                            src="https://img4.momoshop.com.tw/goodsimg/0010/318/447/10318447_O.jpg?t=1676878718"><!--140*140-->
+                        <p class="limite-tag">最後200組</p><!--標籤-->
+                        <p>【LG 樂金】55型一奈米 4K聯網電視</p>
+                        <div>
+                            <p>62折</p>
+                            <p>$24,900</p>
+                        </div>
+                        <p>$39,900</p><!--原價-->
+                    </div>
+                </div>
+            </div>
+            <div class="limite-right">
+                <div class="limite-right-top">
+                    <div class="limite-rt-title">
+                        <h2>爆殺24H</h2>
+                        <div>倒數<p>01</p>:<p>45</p>:<p>32</p>
+                        </div>
+                    </div>
+                    <div class="limite-rt-content">
+                        <p>〈</p>
+                        <div>
+                            <img
+                                src="https://img2.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_253_01/bt_0_253_01_P1_6_e2.jpg?t=1678204815582">
+                            <img
+                                src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_253_01/bt_0_253_01_P1_5_e2.jpg?t=1678253589175">
+                            <img
+                                src="https://img2.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_253_01/bt_0_253_01_P1_3_e2.jpg?t=1678204815582">
+                            <img
+                                src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_253_01/bt_0_253_01_P1_7_e2.jpg?t=1678243503416">
+                        </div>
+                        <p>〉</p>
+                    </div>
+                </div>
+                <div class="limite-right-bottom">
+                    <h2>發燒主題</h2>
+                    <div>
+                        <span>〈</span>
+                        <ul>
+                            <li><a href="#">
+                                    <!--img=>108*108 p=>108*28-->
+                                    <img
+                                        src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_254_01/bt_0_254_01_P1_8_e2.jpg?t=1620648923361">
+                                    <p class="font-tag">#濕紙巾</p>
+                                </a></li>
+                            <li><a href="#">
+                                    <img
+                                        src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_254_01/bt_0_254_01_P1_12_e2.jpg?t=1602835472109">
+                                    <p class="font-tag">#口罩</p>
+                                </a></li>
+                            <li><a href="#">
+                                    <img
+                                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_254_01/bt_0_254_01_P1_15_e2.jpg?t=1611195643917">
+                                    <p class="font-tag">#酒精</p>
+                                </a></li>
+                            <li><a href="#">
+                                    <img
+                                        src="https://img3.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_254_01/bt_0_254_01_P1_6_e2.jpg?t=1667197802516">
+                                    <p class="font-tag">#寵物</p>
+                                </a></li>
+                            <li><a href="#">
+                                    <img
+                                        src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_254_01/bt_0_254_01_P1_14_e2.jpg?t=1620648923361">
+                                    <p class="font-tag">#抗菌</p>
+                                </a></li>
+                        </ul>
+                        <span>〉</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="maybelike">
+            <div class="may-left">
+                <div>
+                    <img
+                        src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_272_01/bt_0_272_01_e4.png?t=1669701873827">
+                </div>
+                <nav>
+                    <div class="may-prev"></div>
+                    <ul>
+                        <li>
+                            <img src="https://i2.momoshop.com.tw/1671660249/goodsimg/0004/227/432/4227432_L.webp">
+                            <p>【QUAKER桂格】嚴選薄片大燕麥片1200gx1盒</p>
+                            <div>
+                                <p>$269</p>
+                                <p>$169</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://i4.momoshop.com.tw/1658243328/goodsimg/0010/109/367/10109367_L.webp">
+                            <p>【麥當勞】麥香?堡(即享券)</p>
+                            <div>
+                                <p></p>
+                                <p>$45</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="https://i2.momoshop.com.tw/1677773373/goodsimg/0009/192/774/9192774_L.webp">
+                            <p>【EverClean 藍鑽】強效凝結除臭貓砂10L(歐規)</p>
+                            <div>
+                                <p>$880</p>
+                                <p>$749</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="may-next"></div>
+                </nav>
+            </div>
+            <div class="may-right">
+                <div class="may-right-top">
+                    <img
+                        src="https://img2.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_269_01/bt_0_269_01_e4.png?t=1668650325138">
+                    <div>
+                        <nav>
+                            <div class="may-prev"></div>
+                            <ul>
+                                <li>
+                                    <img src="https://i4.momoshop.com.tw/1665654239/goodsimg/0006/986/495/6986495_L.webp">
+                                    <p>【幫寶適】超薄乾爽 嬰兒紙尿褲 M 100片 x2包 彩盒箱</p>
+                                    <div>
+                                        <p>$1,290</p>
+                                        <p>$1,189</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://i2.momoshop.com.tw/1676620145/goodsimg/0010/576/645/10576645_L.webp">
+                                    <p>【Chido 趣多】雪山山脈天然礦泉水1500mlx12入/箱</p>
+                                    <div>
+                                        <p>$360</p>
+                                        <p>$239</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://i2.momoshop.com.tw/1658423134/goodsimg/0007/412/907/7412907_L.webp">
+                                    <p>即期品【永信藥品】健康優見精敏藻油軟膠囊(DHA+PS磷脂絲胺酸)x1瓶(30粒/瓶)(效期至2025/03)</p>
+                                    <div>
+                                        <p>$850</p>
+                                        <p>$799</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://i2.momoshop.com.tw/1658761068/goodsimg/0008/846/811/8846811_L.webp">
+                                    <p>X尋寶探險隊 15 改造人芬里爾：倫敦．煉金術．哥雷姆</p>
+                                    <div>
+                                        <p>$280</p>
+                                        <p>$221</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="https://i4.momoshop.com.tw/1677129862/goodsimg/0008/459/854/8459854_L.webp">
+                                    <p>【GW 水玻璃】疊疊樂 分離式除濕機 3入組(不含還原座)</p>
+                                    <div>
+                                        <p>$699</p>
+                                        <p>$499</p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div></div>
+                            <div class="may-next"></div>
+                        </nav>
+                    </div>
+                </div>
+                <div class="may-right-bottom">
+                    <img
+                        src="https://img4.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_270_01/bt_0_270_01_e4.png?t=1668650959190">
+                    <div>
+                        <nav>
+                            <div class="may-prev"></div>
+                            <ul>
+                                <li>
+                                    <i class="may-rb-top">1</i>
+                                    <img src="https://img3.momoshop.com.tw/1677779011/goodsimg/0010/985/713/10985713_O.jpg">
+                                    <p>❤42657</p>
+                                    <p>$2,599</p>
+                                    <p>$5,980</p>
+                                </li>
+                                <li>
+                                    <i class="may-rb-top">2</i>
+                                    <img src="https://img4.momoshop.com.tw/1678182683/goodsimg/0010/987/853/10987853_O.jpg">
+                                    <p>❤40415</p>
+                                    <p>$299</p>
+                                    <p>$747</p>
+                                </li>
+                                <li>
+                                    <i class="may-rb-top">3</i>
+                                    <img src="https://img1.momoshop.com.tw/1677774232/goodsimg/0009/252/386/9252386_O.jpg">
+                                    <p>❤36875</p>
+                                    <p>$222</p>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <i>4</i>
+                                    <img src="https://img2.momoshop.com.tw/1678263775/goodsimg/0007/925/930/7925930_O.jpg">
+                                    <p>❤22597</p>
+                                    <p>$1,599</p>
+                                    <p>$1,780</p>
+                                </li>
+                                <li>
+                                    <i>5</i>
+                                    <img src="https://img3.momoshop.com.tw/1678187436/goodsimg/0010/512/676/10512676_O.jpg">
+                                    <p>❤20768</p>
+                                    <p>$1,188</p>
+                                    <p></p>
+                                </li>
+                                <li>
+                                    <i>6</i>
+                                    <img src="https://img4.momoshop.com.tw/1678196103/goodsimg/0006/446/564/6446564_O.jpg">
+                                    <p>❤20178</p>
+                                    <p>$799</p>
+                                    <p>$1,260</p>
+                                </li>
+                                <li>
+                                    <i>7</i>
+                                    <img src="https://img1.momoshop.com.tw/1677797226/goodsimg/0008/070/836/8070836_O.jpg">
+                                    <p>❤16461</p>
+                                    <p>$869</p>
+                                    <p>$1,599</p>
+                                </li>
+                            </ul>
+                            <div></div>
+                            <div class="may-next"></div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ad">
+            <img src="https://img2.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_256_01/bt_0_256_01_e2.jpg?t=1677071176806">
+        </div>
+        <div class="momocard">
+            <img src="https://img1.momoshop.com.tw/ecm/img/online/10/999/00/000/bt_0_999_01/momo_tt.png?t=1677833940635">
+            <nav>
+                <ul>
+                    <li><a href="#">三星</a></li>
+                    <li><a href="#">漢美馳</a></li>
+                    <li><a href="#">惠而浦</a></li>
+                    <li><a href="#">幫寶適</a></li>
+                    <li><a href="#">麗貝樂</a></li>
+                    <li><a href="#">persil</a></li>
+                    <li><a href="#">膳魔師</a></li>
+                    <li><a href="#">Homelike</a></li>
+                    <li><a href="#">塑魔織</a></li>
+                    <li><a href="#">船井生醫</a></li>
+                    <li><a href="#">LEVIS</a></li>
+                    <li><a href="#">Dickies</a></li>
+                    <li><a href="#">AVEDA</a></li>
+                    <li><a href="#">innisfree</a></li>
+                    <li><a href="#">tokuyo</a></li>
+                    <li><a href="#">國際牌</a></li>
+                    <li><a href="#">雷蛇</a></li>
+                    <li><a href="#">羅技</a></li>
+                    <li><a href="#">娘家</a></li>
+                    <li><a href="#">一之鄉</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="rank">
+            <nav>
+                <h2>熱銷排行榜</h2>
+                <ul>
+                    <li><a href="#">生活家電</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </nav>
+        </div>
+    </main>
+</body>
+
+</html>
